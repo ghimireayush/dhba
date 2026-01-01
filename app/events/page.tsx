@@ -100,12 +100,11 @@ export default function EventsPage() {
             </div>
 
             {/* Search and Filters */}
-            <div className="bg-white border border-border rounded-lg p-6 mb-8 space-y-4">
-              {/* Search */}
-              <div>
-                <label className="block text-sm font-semibold text-foreground mb-2">Search</label>
-                <div className="relative">
-                  <Search size={20} className="absolute left-3 top-3 text-muted-foreground" />
+            <div className="bg-white border border-border rounded-lg p-4 mb-8">
+              <div className="flex flex-col sm:flex-row items-center gap-4">
+                {/* Search */}
+                <div className="relative flex-1 w-full sm:w-auto">
+                  <Search size={20} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
                   <input
                     type="text"
                     placeholder="Search by title or content..."
@@ -114,38 +113,35 @@ export default function EventsPage() {
                     className="w-full pl-10 pr-4 py-2 border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
                   />
                 </div>
-              </div>
 
-              {/* Category Filter */}
-              <div>
-                <label className="block text-sm font-semibold text-foreground mb-2 flex items-center gap-2">
-                  <Filter size={16} />
-                  Category
-                </label>
-                <select
-                  value={selectedCategory}
-                  onChange={(e) => setSelectedCategory(e.target.value)}
-                  className="w-full px-3 py-2 border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                {/* Category Filter */}
+                <div className="flex items-center gap-2 w-full sm:w-auto">
+                  <Filter size={16} className="text-muted-foreground shrink-0" />
+                  <select
+                    value={selectedCategory}
+                    onChange={(e) => setSelectedCategory(e.target.value)}
+                    className="w-full sm:w-48 px-3 py-2 border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                  >
+                    <option value="">All Categories</option>
+                    {categories.map((cat) => (
+                      <option key={cat} value={cat}>
+                        {cat}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                {/* Clear */}
+                <button
+                  onClick={() => {
+                    setSearchTerm("")
+                    setSelectedCategory("")
+                  }}
+                  className="text-primary hover:text-primary/80 font-semibold text-sm transition whitespace-nowrap"
                 >
-                  <option value="">All Categories</option>
-                  {categories.map((cat) => (
-                    <option key={cat} value={cat}>
-                      {cat}
-                    </option>
-                  ))}
-                </select>
+                  Clear Filters
+                </button>
               </div>
-
-              {/* Clear */}
-              <button
-                onClick={() => {
-                  setSearchTerm("")
-                  setSelectedCategory("")
-                }}
-                className="text-primary hover:text-primary/80 font-semibold text-sm transition"
-              >
-                Clear Filters
-              </button>
             </div>
 
             {/* Events List */}

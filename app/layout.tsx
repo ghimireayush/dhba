@@ -10,22 +10,22 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "DHBA Kathmandu - District Hotel Business Association",
+  title: "Unity Hotel and Guesthouse Business Association of Nepal",
   description:
-    "Discover hotels, destinations, and events in Kathmandu through the District Hotel Business Association.",
+    "Discover hotels, destinations, and events in Kathmandu through Unity Hotel and Guesthouse Business Association of Nepal.",
   generator: "v0.app",
   icons: {
     icon: [
       {
-        url: "/hotelassociation-logo.jpg",
-        type: "image/jpeg",
+        url: "/ektalogo.png",
+        type: "image/png",
       },
       {
         url: "/favicon.ico",
         sizes: "any",
       },
     ],
-    apple: "/hotelassociation-logo.jpg",
+    apple: "/ektalogo.png",
   },
 }
 
@@ -38,7 +38,7 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <head>
         <link rel="manifest" href="/site.webmanifest" />
-        <link rel="icon" href="/hotelassociation-logo.jpg" type="image/jpeg" />
+        <link rel="icon" href="/ektalogo.png" type="image/png" />
         <link rel="shortcut icon" href="/favicon.ico" />
         <meta name="theme-color" content="#1a472a" />
       </head>

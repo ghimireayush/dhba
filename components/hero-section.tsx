@@ -5,6 +5,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight } from "lucide-react"
 import { useLanguage } from "@/contexts/language-context"
+import { ASSOCIATION_CONFIG } from "@/config/associations"
 import { Meteors } from "@/components/ui/meteors"
 import { NepalMap } from "@/components/ui/nepal-map"
 
@@ -17,9 +18,9 @@ export function HeroSection() {
   const ads = [
     {
       id: 1,
-      title: "About DHBA",
+      title: "About Us",
       description: "Representing hospitality sector since 2074 B.S.",
-      image: "/hotelassociation-logo.jpg",
+      image: "/ektalogo.png",
       link: "/about",
     },
     {
@@ -75,28 +76,20 @@ export function HeroSection() {
 
   const slides = [
     {
-      title: "District Hotel Business Association Kathmandu",
-      subtitle:
-        "The District Hotel Business Association Kathmandu (DHBA) is a dedicated organization representing the hospitality sector in Kathmandu. Established in 2074 B.S., DHBA serves as the umbrella organization for seven active hotel business associations.",
-      cta: "Explore Our Members",
+      title: t("home.hero.title"),
+      subtitle: t("home.hero.subtitle", { count: ASSOCIATION_CONFIG.totalAssociations }),
+      cta: t("home.hero.cta"),
       ctaLink: "/members",
       image: "/luxury-hotel-kathmandu.jpg",
     },
     {
-      title: "Seven Active Hotel Associations",
-      subtitle:
-        "Operating in key areas of Kathmandu, including Kalanki, Sundhara, Bagbazar, Koteshwor, Airport, Chabahil, New Bus Park, and Balaju.",
-      cta: "View Locations",
+      title: t("home.hero.slide2Title", { count: ASSOCIATION_CONFIG.totalAssociations }),
+      subtitle: t("home.hero.slide2Subtitle"),
+      cta: t("home.hero.slide2Cta"),
       ctaLink: "/destinations",
       image: "/resort-kathmandu-luxury.jpg",
     },
-    {
-      title: "Join Our Community",
-      subtitle: "Be part of Kathmandu's premier hospitality network. Connect with industry leaders and grow your business.",
-      cta: "Learn More",
-      ctaLink: "/about",
-      image: "/bhaktapur-resort-scenic.jpg",
-    },
+    
   ]
 
   useEffect(() => {
@@ -110,16 +103,16 @@ export function HeroSection() {
   return (
     <section className="relative">
       {/* Top Part: Modern Business Card Ticker */}
-      <div className="bg-background border-b border-border overflow-hidden py-4">
+      <div className="bg-background border-b border-border overflow-hidden py-2">
         <div className="ticker-wrapper">
           <div className="ticker-content">
             {[...ads, ...ads].map((ad, index) => (
               <Link
                 key={`${ad.id}-${index}`}
                 href={ad.link}
-                className="ticker-card inline-block mx-3 group"
+                className="ticker-card inline-block mx-2 group"
               >
-                <div className="relative w-[280px] h-[140px] rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                <div className="relative w-[200px] h-[80px] rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105">
                   {/* Card Image */}
                   <Image
                     src={ad.image}
@@ -130,9 +123,9 @@ export function HeroSection() {
                   {/* Gradient Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                   {/* Content */}
-                  <div className="absolute bottom-0 left-0 right-0 p-4">
-                    <h3 className="text-white font-bold text-sm mb-1 line-clamp-1">{ad.title}</h3>
-                    <p className="text-white/90 text-xs line-clamp-2">{ad.description}</p>
+                  <div className="absolute bottom-0 left-0 right-0 p-2">
+                    <h3 className="text-white font-bold text-xs mb-0.5 line-clamp-1">{ad.title}</h3>
+                    <p className="text-white/90 text-[10px] line-clamp-1">{ad.description}</p>
                   </div>
                 </div>
               </Link>

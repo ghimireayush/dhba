@@ -1,6 +1,6 @@
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { BookOpen, FileText, Download, Video, Award, TrendingUp } from "lucide-react"
+import { BookOpen, FileText, Video, Award, TrendingUp } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 
@@ -73,20 +73,21 @@ export default function ResourcesPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
+
       <main className="flex-grow">
-        {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-primary/10 via-background to-accent/5 py-20 px-4">
+        {/* ================= HERO ================= */}
+        <section className="relative bg-gradient-to-br from-primary/10 via-background to-accent/5 pt-20 pb-10 px-4">
           <div className="max-w-7xl mx-auto text-center">
-            <div className="inline-block mb-4">
-              <span className="text-primary font-semibold text-sm tracking-widest uppercase">Knowledge Hub</span>
-            </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
+            
+
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mt-4 mb-4">
               Resources & Learning Center
             </h1>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
+
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-6">
               Access training materials, blog posts, industry guides, and valuable resources to enhance your hospitality business
             </p>
-            
+
             {/* Search Bar */}
             <div className="max-w-2xl mx-auto">
               <div className="relative">
@@ -95,7 +96,7 @@ export default function ResourcesPage() {
                   placeholder="Search resources..."
                   className="w-full px-6 py-4 rounded-full border border-border focus:outline-none focus:ring-2 focus:ring-primary"
                 />
-                <button className="absolute right-2 top-1/2 -translate-y-1/2 bg-gradient-to-r from-primary to-accent text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg transition-smooth">
+                <button className="absolute right-2 top-1/2 -translate-y-1/2 bg-gradient-to-r from-primary to-accent text-white px-6 py-2 rounded-full font-semibold">
                   Search
                 </button>
               </div>
@@ -103,45 +104,45 @@ export default function ResourcesPage() {
           </div>
         </section>
 
-        {/* Categories Filter */}
-        <section className="py-8 px-4 border-b border-border">
-          <div className="max-w-7xl mx-auto">
-            <div className="flex flex-wrap gap-3 justify-center">
-              {categories.map((category) => (
-                <button
-                  key={category}
-                  className="px-6 py-2 rounded-full border border-border hover:border-primary hover:bg-primary/5 transition-smooth font-medium"
-                >
-                  {category}
-                </button>
-              ))}
-            </div>
+        {/* ================= CATEGORIES ================= */}
+        <section className="py-4 px-4 border-b border-border -mt-4">
+          <div className="max-w-7xl mx-auto flex flex-wrap justify-center gap-3">
+            {categories.map((category) => (
+              <button
+                key={category}
+                className="px-5 py-2 rounded-full border border-border hover:border-primary hover:bg-primary/5 transition font-medium text-sm"
+              >
+                {category}
+              </button>
+            ))}
           </div>
         </section>
 
-        {/* Resources Grid */}
-        <section className="py-16 px-4">
+        {/* ================= RESOURCES GRID ================= */}
+        <section className="pt-8 pb-16 px-4">
           <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {resources.map((resource) => (
                 <Link
                   key={resource.id}
-                  href={resource.category === "Blog" ? `/resources/blog/${resource.id}` : `/resources/${resource.id}`}
-                  className="group bg-card border border-border rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                  href={
+                    resource.category === "Blog"
+                      ? `/resources/blog/${resource.id}`
+                      : `/resources/${resource.id}`
+                  }
+                  className="group bg-card border border-border rounded-xl overflow-hidden hover:shadow-xl transition-all hover:-translate-y-1"
                 >
                   {/* Image */}
-                  <div className="relative h-48 overflow-hidden">
+                  <div className="relative h-48">
                     <Image
                       src={resource.image}
                       alt={resource.title}
                       fill
-                      className="object-cover group-hover:scale-110 transition-transform duration-300"
+                      className="object-cover group-hover:scale-110 transition-transform"
                     />
-                    <div className="absolute top-4 left-4">
-                      <span className="bg-primary text-white px-3 py-1 rounded-full text-xs font-semibold">
-                        {resource.category}
-                      </span>
-                    </div>
+                    <span className="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-xs font-semibold">
+                      {resource.category}
+                    </span>
                   </div>
 
                   {/* Content */}
@@ -152,20 +153,17 @@ export default function ResourcesPage() {
                       <span>•</span>
                       <span>{new Date(resource.date).toLocaleDateString()}</span>
                     </div>
-                    
-                    <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+
+                    <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition">
                       {resource.title}
                     </h3>
-                    
-                    <p className="text-muted-foreground text-sm line-clamp-3">
+
+                    <p className="text-sm text-muted-foreground line-clamp-3">
                       {resource.description}
                     </p>
 
-                    <div className="mt-4 flex items-center text-primary font-semibold text-sm">
-                      Read More
-                      <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
+                    <div className="mt-4 text-primary font-semibold text-sm flex items-center">
+                      Read More →
                     </div>
                   </div>
                 </Link>
@@ -173,18 +171,18 @@ export default function ResourcesPage() {
             </div>
 
             {/* Load More */}
-            <div className="text-center mt-12">
-              <button className="bg-gradient-to-r from-primary to-accent text-white px-8 py-4 rounded-full font-semibold hover:shadow-xl transition-smooth">
+            <div className="text-center mt-10">
+              <button className="bg-gradient-to-r from-primary to-accent text-white px-8 py-4 rounded-full font-semibold">
                 Load More Resources
               </button>
             </div>
           </div>
         </section>
 
-        {/* CTA Section */}
+        {/* ================= CTA ================= */}
         <section className="py-16 px-4 bg-gradient-to-br from-primary/10 to-accent/10">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Need Specific Training or Resources?
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
@@ -192,13 +190,14 @@ export default function ResourcesPage() {
             </p>
             <Link
               href="/contact"
-              className="inline-block bg-gradient-to-r from-primary to-accent text-white px-8 py-4 rounded-full font-semibold hover:shadow-xl transition-smooth"
+              className="inline-block bg-gradient-to-r from-primary to-accent text-white px-8 py-4 rounded-full font-semibold"
             >
               Contact Us
             </Link>
           </div>
         </section>
       </main>
+
       <Footer />
     </div>
   )

@@ -2,13 +2,14 @@
 
 import type React from "react"
 import { createContext, useContext, useState } from "react"
+import { ASSOCIATION_CONFIG } from "@/config/associations"
 
 export type Language = "en" | "ne"
 
 interface LanguageContextType {
   language: Language
   setLanguage: (lang: Language) => void
-  t: (key: string) => string
+  t: (key: string, replacements?: Record<string, string | number>) => string
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
@@ -16,7 +17,7 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguage] = useState<Language>("en")
 
-  const t = (key: string): string => {
+  const t = (key: string, replacements?: Record<string, string | number>): string => {
     const keys = key.split(".")
     let value: any = translations[language]
 
@@ -24,7 +25,18 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
       value = value?.[k]
     }
 
-    return value || key
+    if (!value) return key
+
+    // Apply replacements
+    if (replacements) {
+      let result = value
+      for (const [placeholder, replacement] of Object.entries(replacements)) {
+        result = result.replace(new RegExp(`{{${placeholder}}}`, 'g'), String(replacement))
+      }
+      return result
+    }
+
+    return value
   }
 
   return <LanguageContext.Provider value={{ language, setLanguage, t }}>{children}</LanguageContext.Provider>
@@ -44,6 +56,7 @@ const translations = {
       home: "Home",
       about: "About",
       hotels: "Hotels",
+      memberHotels: "Member Hotels",
       destinations: "Destinations",
       events: "Events",
       gallery: "Gallery",
@@ -53,7 +66,7 @@ const translations = {
       memberPortal: "Member Portal",
       admin: "Admin",
       logout: "Logout",
-      resources: "Resources",
+      resources: "Useful Resources",
       blogs: "Blogs",
       news: "News",
       downloads: "Downloads",
@@ -61,13 +74,13 @@ const translations = {
     },
     home: {
       hero: {
-        title: "District Hotel Business Association Kathmandu",
-        subtitle: "The District Hotel Business Association Kathmandu (DHBA) is a dedicated organization representing the hospitality sector in Kathmandu. Established in 2074 B.S., DHBA serves as the umbrella organization for seven active hotel business associations.",
+        title: "Unity Hotel and Guesthouse Business Association of Nepal",
+        subtitle: "Ekata Hotel and Guesthouse Business Association of Nepal is a dedicated organization representing the hospitality sector in Kathmandu. Established in 2074 B.S., it serves as the umbrella organization for {{count}} active hotel business associations.",
         cta: "Explore Our Members",
         exploreBtn: "Explore Hotels",
         learnMore: "Learn More",
         badge: "Discover Premium Hospitality",
-        slide2Title: "Seven Active Hotel Associations",
+        slide2Title: "{{count}} Active Hotel Associations",
         slide2Subtitle: "Operating in key areas of Kathmandu, including Kalanki, Sundhara, Bagbazar, Koteshwor, Airport, Chabahil, New Bus Park, and Balaju.",
         slide2Cta: "View Locations",
         slide3Title: "Join Our Community",
@@ -75,7 +88,7 @@ const translations = {
         slide3Cta: "Learn More",
       },
       ticker: {
-        aboutDhba: "About DHBA",
+        aboutDhba: "About Us",
         aboutDesc: "Representing hospitality sector since 2074 B.S.",
         annualMeeting: "Annual General Meeting",
         meetingDesc: "Join us for networking opportunities",
@@ -103,7 +116,7 @@ const translations = {
       },
       committee: {
         title: "Leadership Team",
-        subtitle: "Meet the dedicated leadership of DHBA Kathmandu committed to advancing the hospitality industry",
+        subtitle: "Meet the dedicated leadership committed to advancing the hospitality industry",
         executive: "Executive Leadership",
         general: "General Members",
       },
@@ -115,7 +128,7 @@ const translations = {
       },
       newsletter: {
         title: "Subscribe to Our Newsletter",
-        subtitle: "Get the latest news, events, and updates from DHBA delivered to your inbox",
+        subtitle: "Get the latest news, events, and updates delivered to your inbox",
         placeholder: "Enter your email",
         subscribe: "Subscribe",
         success: "✓ Thank you for subscribing!",
@@ -127,14 +140,20 @@ const translations = {
       },
     },
     about: {
-      title: "About DHBA",
-      subtitle: "District Hotel Business Association Kathmandu",
+      title: "About Us",
+      subtitle: "Unity Hotel and Guesthouse Business Association of Nepal",
       mission: "Our Mission",
       vision: "Our Vision",
       history: "Our History",
       established: "Established in 2074 B.S.",
-      description: "The District Hotel Business Association Kathmandu (DHBA) is a dedicated organization representing the hospitality sector in Kathmandu.",
-      fullDescription: "DHBA serves as the umbrella organization for seven active hotel business associations (units) operating in key areas of Kathmandu, including Kalanki, Sundhara, Bagbazar, Koteshwor, Airport, Chabahil, New Bus Park, and Balaju.",
+      description: "Unity Hotel and Guesthouse Business Association of Nepal is a dedicated organization representing the hospitality sector in Kathmandu.",
+      fullDescription: "We serve as the umbrella organization for {{count}} active hotel business associations (units) operating in key areas of Kathmandu, including Kalanki, Sundhara, Bagbazar, Koteshwor, Airport, Chabahil, New Bus Park, and Balaju.",
+      serviceAreas: "Our service areas include Kalanki, Sundhara, Bagbazar, Koteshwor, Airport, Chabahil, New Bus Park, and Balaju. We are committed to advocating for hotel owners' rights, upholding service standards, and collaborating with tourism authorities to enhance the industry's overall development.",
+      previewTitle: "About Unity",
+      previewDescription: "Unity Hotel and Guesthouse Business Association of Nepal is a dedicated organization representing the hospitality sector in Kathmandu. Established in 2074 B.S., Unity serves as the umbrella organization for {{count}} active hotel business associations.",
+      readFullStory: "Read Full Story",
+      leadershipTitle: "Our Leadership",
+      presidentTitle: "President, Unity Kathmandu",
     },
     hotels: {
       title: "Hotels Directory",
@@ -183,7 +202,7 @@ const translations = {
     },
     contact: {
       title: "Contact Us",
-      subtitle: "Get in touch with DHBA",
+      subtitle: "Get in touch with us",
       name: "Name",
       email: "Email",
       phone: "Phone",
@@ -211,7 +230,7 @@ const translations = {
       backToLogin: "Back to Login",
     },
     footer: {
-      brand: "District Hotel Business Association, representing premium hospitality and excellence in Nepal's capital.",
+      brand: "Unity Hotel and Guesthouse Business Association, representing premium hospitality and excellence in Nepal's capital.",
       quickLinks: "Quick Links",
       resources: "Resources",
       contact: "Contact",
@@ -266,6 +285,7 @@ const translations = {
       home: "होम",
       about: "बारेमा",
       hotels: "होटलहरु",
+      memberHotels: "सदस्य होटलहरु",
       destinations: "गन्तव्यहरु",
       events: "कार्यक्रमहरु",
       gallery: "ग्यालेरी",
@@ -283,13 +303,13 @@ const translations = {
     },
     home: {
       hero: {
-        title: "जिल्ला होटेल व्यवसाय संघ काठमाडौं",
-        subtitle: "जिल्ला होटेल व्यवसाय संघ काठमाडौं (DHBA) काठमाडौंको आतिथ्य क्षेत्रको प्रतिनिधित्व गर्ने एक समर्पित संस्था हो। २०७४ बि.स. मा स्थापित, DHBA सात सक्रिय होटेल व्यवसाय संघहरूको छाता संगठनको रूपमा काम गर्दछ।",
+        title: "एकता होटल तथा गेस्टहाउस व्यवसायी सङ्घ काठमाडौँ, नेपाल",
+        subtitle: "एकता होटल तथा गेस्टहाउस व्यवसायी सङ्घ काठमाडौँको आतिथ्य क्षेत्रको प्रतिनिधित्व गर्ने एक समर्पित संस्था हो। २०७४ बि.स. मा स्थापित, यो {{count}} सक्रिय होटेल व्यवसाय संघहरूको छाता संगठनको रूपमा काम गर्दछ।",
         cta: "हाम्रा सदस्यहरू अन्वेषण गर्नुहोस्",
         exploreBtn: "होटलहरु खोज्नुहोस्",
         learnMore: "अझ जान्नुहोस्",
         badge: "प्रीमियम आतिथ्य खोज्नुहोस्",
-        slide2Title: "सात सक्रिय होटेल संघहरू",
+        slide2Title: "{{count}} सक्रिय होटेल संघहरू",
         slide2Subtitle: "काठमाडौंका मुख्य क्षेत्रहरूमा सञ्चालन, कलंकी, सुन्धरा, बागबजार, कोटेश्वर, एयरपोर्ट, चाबहिल, नयाँ बसपार्क र बालाजु सहित।",
         slide2Cta: "स्थानहरू हेर्नुहोस्",
         slide3Title: "हाम्रो समुदायमा सामेल हुनुहोस्",
@@ -297,7 +317,7 @@ const translations = {
         slide3Cta: "अझ जान्नुहोस्",
       },
       ticker: {
-        aboutDhba: "DHBA बारे",
+        aboutDhba: "हाम्रो बारेमा",
         aboutDesc: "२०७४ बि.स. देखि आतिथ्य क्षेत्रको प्रतिनिधित्व गर्दै",
         annualMeeting: "वार्षिक साधारण सभा",
         meetingDesc: "नेटवर्किङ अवसरहरूको लागि हामीसँग सामेल हुनुहोस्",
@@ -325,7 +345,7 @@ const translations = {
       },
       committee: {
         title: "नेतृत्व दल",
-        subtitle: "DHBA काठमाडौंको नेतृत्व टीमलाई भेट्नुहोस् जो आतिथ्य उद्योग अग्रसर गर्न प्रतिबद्ध छन्",
+        subtitle: "आतिथ्य उद्योग अग्रसर गर्न प्रतिबद्ध नेतृत्व टीमलाई भेट्नुहोस्",
         executive: "कार्यकारी नेतृत्व",
         general: "सामान्य सदस्यहरु",
       },
@@ -337,7 +357,7 @@ const translations = {
       },
       newsletter: {
         title: "हाम्रो न्यूजलेटर सदस्यता लिनुहोस्",
-        subtitle: "DHBA बाट ताजा समाचार, कार्यक्रम र अपडेटहरु आफ्नो इनबक्समा पाउनुहोस्",
+        subtitle: "ताजा समाचार, कार्यक्रम र अपडेटहरु आफ्नो इनबक्समा पाउनुहोस्",
         placeholder: "आफ्नो इमेल प्रविष्ट गर्नुहोस्",
         subscribe: "सदस्यता लिनुहोस्",
         success: "✓ सदस्यताको लागि धन्यवाद!",
@@ -349,14 +369,20 @@ const translations = {
       },
     },
     about: {
-      title: "DHBA बारे",
-      subtitle: "जिल्ला होटेल व्यवसाय संघ काठमाडौं",
+      title: "हाम्रो बारेमा",
+      subtitle: "एकता होटल तथा गेस्टहाउस व्यवसायी सङ्घ काठमाडौँ, नेपाल",
       mission: "हाम्रो मिशन",
       vision: "हाम्रो दृष्टिकोण",
       history: "हाम्रो इतिहास",
       established: "२०७४ बि.स. मा स्थापित",
-      description: "जिल्ला होटेल व्यवसाय संघ काठमाडौं (DHBA) काठमाडौंको आतिथ्य क्षेत्रको प्रतिनिधित्व गर्ने एक समर्पित संस्था हो।",
-      fullDescription: "DHBA कलंकी, सुन्धरा, बागबजार, कोटेश्वर, एयरपोर्ट, चाबहिल, नयाँ बसपार्क र बालाजु सहित काठमाडौंका मुख्य क्षेत्रहरूमा सञ्चालन हुने सात सक्रिय होटेल व्यवसाय संघहरू (इकाईहरू) को छाता संगठनको रूपमा काम गर्दछ।",
+      description: "एकता होटल तथा गेस्टहाउस व्यवसायी सङ्घ काठमाडौँको आतिथ्य क्षेत्रको प्रतिनिधित्व गर्ने एक समर्पित संस्था हो।",
+      fullDescription: "हामी कलंकी, सुन्धरा, बागबजार, कोटेश्वर, एयरपोर्ट, चाबहिल, नयाँ बसपार्क र बालाजु सहित काठमाडौंका मुख्य क्षेत्रहरूमा सञ्चालन हुने {{count}} सक्रिय होटेल व्यवसाय संघहरू (इकाईहरू) को छाता संगठनको रूपमा काम गर्दछौं।",
+      serviceAreas: "हाम्रो सेवा क्षेत्रहरूमा कलंकी, सुन्धरा, बागबजार, कोटेश्वर, एयरपोर्ट, चाबहिल, नयाँ बसपार्क र बालाजु समावेश छन्। हामी होटेल स्वामीहरूको अधिकारको पक्षलाई समर्थन गर्न, सेवा मानकहरू कायम गर्न, र पर्यटन प्राधिकरणहरूसँग सहकार्य गर्न उद्योगको समग्र विकासलाई बढाउन प्रतिबद्ध छौं।",
+      previewTitle: "एकताको बारेमा",
+      previewDescription: "एकता होटल तथा गेष्टहाउस व्यवसाय संघ नेपाल काठमाडौंको आतिथ्य क्षेत्रको प्रतिनिधित्व गर्ने एक समर्पित संस्था हो। २०७४ बि.स. मा स्थापित, एकताले {{count}} सक्रिय होटेल व्यवसाय संघहरूको छाता संगठनको रूपमा काम गर्दछ।",
+      readFullStory: "पूरा कथा पढ्नुहोस्",
+      leadershipTitle: "हाम्रो नेतृत्व",
+      presidentTitle: "अध्यक्ष, एकता काठमाडौं",
     },
     hotels: {
       title: "होटेल निर्देशिका",
@@ -405,7 +431,7 @@ const translations = {
     },
     contact: {
       title: "हामीलाई सम्पर्क गर्नुहोस्",
-      subtitle: "DHBA सँग सम्पर्कमा रहनुहोस्",
+      subtitle: "हामीसँग सम्पर्कमा रहनुहोस्",
       name: "नाम",
       email: "इमेल",
       phone: "फोन",
@@ -433,7 +459,7 @@ const translations = {
       backToLogin: "लगइनमा फर्कनुहोस्",
     },
     footer: {
-      brand: "जिल्ला होटेल व्यवसाय संघ, नेपालको राजधानीमा प्रीमियम आतिथ्य र उत्कृष्टता प्रतिनिधित्व गर्दै।",
+      brand: "एकता होटल तथा गेस्टहाउस व्यवसायी सङ्घ, नेपालको राजधानीमा प्रीमियम आतिथ्य र उत्कृष्टता प्रतिनिधित्व गर्दै।",
       quickLinks: "द्रुत लिङ्कहरु",
       resources: "संसाधनहरु",
       contact: "संपर्क",

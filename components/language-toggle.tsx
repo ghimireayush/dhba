@@ -6,26 +6,26 @@ export function LanguageToggle() {
   const { language, setLanguage } = useLanguage()
 
   return (
-    <div className="flex items-center gap-2 bg-muted/50 rounded-full p-1 border border-border">
+    <div className="flex items-center gap-1">
       <button
         onClick={() => setLanguage("en")}
-        className={`px-3 py-1.5 rounded-full text-sm font-medium transition-smooth ${
+        className={`w-9 h-9 flex items-center justify-center text-xs font-bold border-2 transition-smooth ${
           language === "en"
-            ? "bg-primary text-primary-foreground shadow-md"
-            : "text-muted-foreground hover:text-foreground"
+            ? "bg-primary text-primary-foreground border-primary shadow-md"
+            : "bg-background text-muted-foreground border-border hover:border-primary hover:text-primary"
         }`}
       >
-        English
+        EN
       </button>
       <button
         onClick={() => setLanguage("ne")}
-        className={`px-3 py-1.5 rounded-full text-sm font-medium transition-smooth ${
+        className={`w-9 h-9 flex items-center justify-center text-xs font-bold border-2 transition-smooth ${
           language === "ne"
-            ? "bg-primary text-primary-foreground shadow-md"
-            : "text-muted-foreground hover:text-foreground"
+            ? "bg-primary text-primary-foreground border-primary shadow-md"
+            : "bg-background text-muted-foreground border-border hover:border-primary hover:text-primary"
         }`}
       >
-        नेपाली
+        ने
       </button>
     </div>
   )
