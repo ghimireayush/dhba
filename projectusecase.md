@@ -178,7 +178,7 @@ Provide detailed information about DHBA's mission, history, organizational struc
   - Founding year (2074 B.S.)
   - Key milestones
   - Growth trajectory
-  - Member associations (7 locations)
+  - Member hotels (7 locations)
 
 #### 4. **Leadership Directory**
 - **Purpose:** Show organizational transparency
@@ -200,7 +200,7 @@ Provide detailed information about DHBA's mission, history, organizational struc
 - **Data:** Name and phone number
 - **User Intent:** Know extended leadership
 
-#### 6. **Member Associations Section**
+#### 6. **Member Hotels Section**
 - **Purpose:** Show geographic reach
 - **Lists:** 7 active hotel business associations:
   - Kalanki Hotel Business Association
@@ -221,7 +221,7 @@ Provide detailed information about DHBA's mission, history, organizational struc
 2. View organization intro
 3. Read mission and history
 4. Review leadership team
-5. Understand member associations
+5. Understand member hotels
 6. (Optional) Click leadership contact buttons
 7. (Optional) Sign up to join
 ```
@@ -231,7 +231,7 @@ Provide detailed information about DHBA's mission, history, organizational struc
 - 13+ general members with contact info
 - Mission, vision, values statements
 - Historical milestones
-- Member associations information
+- Member hotels information
 
 ### Business Logic
 - Display leadership in order of hierarchy

@@ -34,7 +34,7 @@ Complete navigation menu translations including:
 
 - **Slide Content**
   - Slide 1: DHBA introduction
-  - Slide 2: Seven active associations
+  - Slide 2: 250+ active associations
   - Slide 3: Community invitation
 
 #### Ticker Ads
@@ -127,13 +127,13 @@ Complete translations for all 8 business card ads:
 - Privacy policy and terms of service
 
 ### 11. Members (members)
-- All seven member associations:
+- All 250+ member hotels:
   - Balaju Hotel Business Association
   - Kalanki Hotel and Guest House Association
   - Kathmandu Hotel Business Association
   - Nepal Guest House Business Association
   - Sundhara Hotel Business Association
-  - United Hotel and Guest House
+  - United Hotel and Guest House Professionals Association
   - Nepali Hotel Business Association
 - Related organizations
 - Members count

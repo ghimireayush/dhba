@@ -5,7 +5,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight } from "lucide-react"
 import { useLanguage } from "@/contexts/language-context"
-import { ASSOCIATION_CONFIG } from "@/config/associations"
+
 import { Meteors } from "@/components/ui/meteors"
 import { NepalMap } from "@/components/ui/nepal-map"
 
@@ -19,7 +19,7 @@ export function HeroSection() {
     {
       id: 1,
       title: "About Us",
-      description: "Representing hospitality sector since 2074 B.S.",
+      description: "Representing hospitality sector since 2069 B.S.",
       image: "/ektalogo.png",
       link: "/about",
     },
@@ -47,7 +47,7 @@ export function HeroSection() {
     {
       id: 5,
       title: "Our Member Units",
-      description: "7 associations across Kathmandu",
+      description: "250+ associations across Kathmandu",
       image: "/traditional-nepalese-hotel.jpg",
       link: "/members",
     },
@@ -77,7 +77,7 @@ export function HeroSection() {
   const slides = [
     {
       title: t("home.hero.title"),
-      subtitle: t("home.hero.subtitle", { count: ASSOCIATION_CONFIG.totalAssociations }),
+      subtitle: t("home.hero.subtitle"),
       cta: t("home.hero.cta"),
       ctaLink: "/members",
       image: "/luxury-hotel-kathmandu.jpg",

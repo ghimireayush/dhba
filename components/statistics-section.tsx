@@ -3,41 +3,48 @@
 import { motion } from "framer-motion"
 import { Users, Building2, Calendar, Award } from "lucide-react"
 import { AnimatedCounter } from "./animated-counter"
-import { useLanguage } from "@/contexts/language-context"
+import { useLanguage } from "@/contexts/language-context" 
+import { useRouter } from "next/navigation"
+
 
 export function StatisticsSection() {
   const { language } = useLanguage()
+  const router = useRouter()
 
   const stats = [
-    {
-      icon: Users,
-      value: 29,
-      label: language === "en" ? "Committee Members" : "समिति सदस्यहरू",
-      suffix: "+",
-      isDate: false,
-    },
-    {
-      icon: Building2,
-      value: 7,
-      label: language === "en" ? "Member Associations" : "सदस्य संघहरू",
-      suffix: "",
-      isDate: false,
-    },
-    {
-      icon: Calendar,
-      value: 50,
-      label: language === "en" ? "Annual Events" : "वार्षिक कार्यक्रमहरू",
-      suffix: "+",
-      isDate: false,
-    },
-    {
-      icon: Award,
-      value: 2074,
-      label: language === "en" ? "Established (B.S.)" : "स्थापना (बि.स.)",
-      suffix: "",
-      isDate: true, // 👈 treated as date
-    },
-  ]
+  {
+    icon: Users,
+    value: 29,
+    label: language === "en" ? "Committee Members" : "समिति सदस्यहरू",
+    suffix: "+",
+    isDate: false,
+    route: "/about#central-community-leadership",
+  },
+  {
+    icon: Building2,
+    value: 250,
+    label: language === "en" ? "Member Hotels" : "सदस्य होटलहरू",
+    suffix: "+",
+    isDate: false,
+    route: "/hotels",
+  },
+  {
+    icon: Calendar,
+    value: 50,
+    label: language === "en" ? "Annual Events" : "वार्षिक कार्यक्रमहरू",
+    suffix: "+",
+    isDate: false,
+    route: "/events",
+  },
+  {
+    icon: Award,
+    value: 2069,
+    label: language === "en" ? "Established (B.S.)" : "स्थापना (बि.स.)",
+    suffix: ".",
+    isDate: true,
+    route: null, // no redirect
+  },
+]
 
   return (
     <section className="py-16 px-4 md:px-8 bg-gradient-to-br from-primary/5 via-background to-accent/5 relative overflow-hidden">
@@ -54,8 +61,12 @@ export function StatisticsSection() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
+
               viewport={{ once: true }}
-              className="text-center group"
+              onClick={() => stat.route && router.push(stat.route)}
+              className={`text-center group${
+                stat.route ? " cursor-pointer hover:scale-105 transition-transform" : ""
+              }`}
             >
               <div className="inline-flex items-center justify-center w-16 h-16 mb-4 rounded-2xl bg-gradient-to-br from-primary to-accent text-white group-hover:scale-110 transition-transform duration-300 shadow-lg">
                 <stat.icon size={32} />

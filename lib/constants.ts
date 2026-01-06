@@ -7,9 +7,7 @@ export const SITE_CONFIG = {
   address: "Kathmandu, Bagmati Zone, Nepal",
   officeHours: "Sunday - Friday: 9:00 AM - 5:00 PM",
   socials: {
-    facebook: "https://facebook.com/dhbakathmandu",
-    twitter: "https://twitter.com/dhbakathmandu",
-    instagram: "https://instagram.com/dhbakathmandu",
+    
   },
   languages: ["English", "Nepali"],
   seoKeywords: ["hotels kathmandu", "nepal tourism", "accommodation", "travel agency", "tourism board"],

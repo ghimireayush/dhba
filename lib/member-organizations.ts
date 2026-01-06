@@ -65,7 +65,7 @@ export const memberOrganizations = [
   },
   {
     id: "united-hotel-guesthouse",
-    name: "United Hotel and Guest House",
+    name: "United Hotel and Guest House Professionals Association",
     shortName: "United HGH",
     committee: [
       { role: "President", name: "Mohan Lama", phone: "9852456789" },

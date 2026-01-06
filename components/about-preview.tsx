@@ -1,8 +1,10 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
+import { Phone } from "lucide-react"
 import { useLanguage } from "@/contexts/language-context"
-import { ASSOCIATION_CONFIG } from "@/config/associations"
+
 
 export function AboutPreview() {
   const { t } = useLanguage()
@@ -13,12 +15,12 @@ export function AboutPreview() {
           {/* Left Text Section */}
           <div>
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
-              {t("about.previewTitle")}
+              United Hotel and Guest House Professionals Association
             </h2>
-            <p className="text-lg text-muted-foreground mb-4 leading-relaxed">
-              {t("about.previewDescription", { count: ASSOCIATION_CONFIG.totalAssociations })}
+            <p className="text-lg text-muted-foreground mb-4 leading-relaxed text-justify">
+              {t("about.previewDescription")}
             </p>
-            <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+            <p className="text-lg text-muted-foreground mb-6 leading-relaxed text-justify">
               {t("about.serviceAreas")}
             </p>
             <Link
@@ -29,29 +31,49 @@ export function AboutPreview() {
             </Link>
           </div>
 
-          {/* Right Leadership Card with Image */}
-          <div className="bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg p-8 border border-primary/20">
+          {/* Right Leadership Card */}
+          <div className="group bg-card rounded-xl p-8 border border-amber-400/50 hover:border-amber-400/70 shadow-sm hover:shadow-amber-100/50 transition-all duration-300">
             <div className="text-center">
-              <h3 className="text-2xl font-bold text-foreground mb-4">
+              <h3 className="text-xl font-bold text-amber-600/80 dark:text-amber-400/80 mb-6">
                 {t("about.leadershipTitle")}
               </h3>
 
-              {/*  Photo */}
-              <img
-                src="/sarojale.jpeg"
-                alt="Mr. Saroj Ale"
-                className="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-primary/40"
-              />
+              {/* President Photo */}
+              <div className="relative w-40 h-40 mx-auto mb-5">
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary to-accent p-0.5">
+                  <div className="w-full h-full rounded-full overflow-hidden bg-card">
+                    <Image
+                      src="/members/sarojale.jpeg"
+                      alt="Mr. Saroj Ale"
+                      width={160}
+                      height={160}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
 
-              <p className="text-3xl font-bold text-primary mb-2">Mr. Saroj Ale</p>
-              <p className="text-muted-foreground mb-4">{t("about.presidentTitle")}</p>
-              <p className="text-muted-foreground">
-                Phone: <a href="tel:+9779851170835">+977 985-1170835</a>
+              {/* Position */}
+              <p className="text-xs font-semibold text-amber-600/80 dark:text-amber-400/80 uppercase tracking-wider mb-2">
+                President
               </p>
+              
+              {/* Name */}
+              <h4 className="text-base font-bold text-foreground mb-4">
+                Mr. Saroj Ale
+              </h4>
 
-              <p className="text-sm text-muted-foreground mt-6 italic">
-                "Through unity, professionalism, and innovation, we can elevate Kathmandu's reputation as a world-class
-                destination."
+              {/* Contact */}
+              <div className="flex items-center justify-center gap-2 pt-4 border-t border-border/30">
+                <Phone className="w-4 h-4 text-amber-500/70" />
+                <a href="tel:+9779851170835" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  +977 9851170835
+                </a>
+              </div>
+
+              {/* Quote */}
+              <p className="text-sm text-muted-foreground italic mt-4 pt-4 border-t border-border/30">
+                "Through unity, professionalism, and innovation, we can elevate Kathmandu's reputation as a world-class destination."
               </p>
             </div>
           </div>

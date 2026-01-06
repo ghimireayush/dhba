@@ -5,44 +5,12 @@ import { Footer } from "@/components/footer"
 import { Breadcrumb } from "@/components/breadcrumb"
 import { Phone } from "lucide-react"
 import { useLanguage } from "@/contexts/language-context"
-import { ASSOCIATION_CONFIG } from "@/config/associations"
+import { workingCommittee, advisors, employees } from "@/lib/committee-data"
+import Image from "next/image"
 
 export default function AboutPage() {
   const { t } = useLanguage()
-  const leadership = [
-    { name: "Mr. Suresh Baral", position: "President", phone: "9851040296", photo: "/sarojale.jpeg" },
-    { name: "Bhavishwar Dubey", position: "Senior Vice President", phone: "9841505124", photo: "/ektalogo.png" },
-    { name: "Mr. Jitendra Giri", position: "Vice President", phone: "9841222185", photo: "/ektalogo.png" },
-    { name: "Mr. Manohari Kandel", position: "Vice President", phone: "9851061883", photo: "/ektalogo.png" },
-    { name: "Mr. Vishnu Prasad Ghimire", position: "Vice President", phone: "9857030807", photo: "/ektalogo.png" },
-    { name: "Mr. Mahendra Rai", position: "Vice President", phone: "9849451826", photo: "/ektalogo.png" },
-    { name: "Mr. Kumar Shrestha", position: "Vice President", phone: "9851113741", photo: "/ektalogo.png" },
-    { name: "Mr. Vishnu Prasad Upadhyay", position: "Vice President", phone: "9851060656", photo: "/ektalogo.png" },
-    { name: "Mr. Sailendra Bikram Thapa", position: "General Secretary", phone: "9766868845", photo: "/ektalogo.png" },
-    { name: "Mr. Shivalal Giri", position: "Deputy General Secretary", phone: "9851069163", photo: "/ektalogo.png" },
-    { name: "Mr. Hari Prasad Aryal", position: "Secretary", phone: "9851217148", photo: "/ektalogo.png" },
-    { name: "Ms. Devaki Bhandari", position: "Secretary", phone: "9843108533", photo: "/ektalogo.png" },
-    { name: "Mr. Jayalal Shrestha", position: "Secretary", phone: "9841072094", photo: "/ektalogo.png" },
-    { name: "Mr. Lal Bahadur Bania (Anish)", position: "Secretary", phone: "9851108710", photo: "/ektalogo.png" },
-    { name: "Mr. Shalikram Thapa", position: "Treasurer", phone: "9841416176", photo: "/ektalogo.png" },
-    { name: "Mr. Lekhanath Kharal", position: "Assistant Treasurer", phone: "9851018353", photo: "/ektalogo.png" },
-  ]
-
-  const members = [
-    { name: "Mr. Numakant Pathak",position:"Member", phone: "9860571964", photo: "/ektalogo.png" },
-    { name: "Mr. Captain Adhikari",position:"Member", phone: "9766433991", photo: "/ektalogo.png" },
-    { name: "Mr. Nabin Adhikari",position:"Member", phone: "9846704805", photo: "/ektalogo.png" },
-    { name: "Mr. Santosh Paudel",position:"Member", phone: "9823513561", photo: "/ektalogo.png" },
-    { name: "Mr. Khemraj Upreti",position:"Member", phone: "9841814655", photo: "/ektalogo.png" },
-    { name: "Mr. Madhav Prasad Gautam",position:"Member", phone: "9855068315", photo: "/ektalogo.png" },
-    { name: "Mr. Sher Bahadur Bista",position:"Member", phone: "9844904684", photo: "/ektalogo.png" },
-    { name: "Ms. Sharada Khadka",position:"Member", phone: "9849425774", photo: "/ektalogo.png" },
-    { name: "Mr. Dil Bahadur Kshetri",position:"Member", phone: "9851082116", photo: "/ektalogo.png" },
-    { name: "Mr. Lalit Bahadur Shrestha",position:"Member", phone: "9841185560", photo: "/ektalogo.png" },
-    { name: "Ms. Renuka Yasko Limbu",position:"Member", phone: "9849384428", photo: "/ektalogo.png" },
-    { name: "Ms. Sujata Maya Tamang",position:"Member", phone: "9849492825", photo: "/ektalogo.png" },
-    { name: "Ms. Apsara Thapa",position:"Member", phone: "9840835193", photo: "/ektalogo.png" },
-  ]
+  
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -52,19 +20,21 @@ export default function AboutPage() {
 
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-primary/10 to-accent/10 border-b border-border">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-foreground mb-6">About Unity  Hotel Kathmandu</h2>
+            <h2 className="text-3xl font-bold text-foreground mb-6">About Unity Hotel and GuestHouse Professional Association</h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-              Unity  Hotel and guesthouse Business Association of Nepal is a dedicated organization representing the
-              hospitality sector in Kathmandu. Established in 2074 B.S.,  serves as the umbrella organization for
-              {t("about.fullDescription", { count: ASSOCIATION_CONFIG.totalAssociations })}
-            </p>
+              Unity Hotel and GuestHouse Professional Association of Nepal is a dedicated organization representing the
+              hospitality sector in Kathmandu. Established in 2069 B.S., it serves as the umbrella organization for many Hotels and Guest Houses in Kathmandu.
+              The association is committed to promoting sustainable tourism, enhancing hospitality standards, and supporting the growth of the hospitality industry in Nepal.</p>
             <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-              {t("about.serviceAreas")}
-            </p>
+              Our member hotels operate in key areas including Naya Basti Tilaganga, Airport Sinamangal, Gausala Pingalasthan, Gyaneshwor, Sukedhara, Chakrapath, Basundhara, and Lazimpat.</p>
             <div className="flex gap-4 mt-6">
               <div>
                 <p className="text-sm text-muted-foreground">Phone</p>
-                <p className="text-lg font-semibold text-foreground">+977 985-1170835</p>
+                <p className="text-lg font-semibold text-foreground">+977 01-4586327</p>
+              </div>
+              <div>
+                <p className="text-sm text-muted-foreground">Email</p>
+                <p className="text-lg font-semibold text-foreground">ekatahotel2069@gmail.com</p>
               </div>
               <div>
                 <p className="text-sm text-muted-foreground">Location</p>
@@ -82,7 +52,7 @@ export default function AboutPage() {
                 Dear Members, Partners, and Valued Stakeholders,
               </p>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                As President of the Unity Hotel and Guesthouse Business Association of Nepal, I am honored to lead an organization
+                As President of the United Hotel and Guest House Professionals Association, Nepal, I am honored to lead an organization
                 committed to the growth and excellence of our hospitality industry. Kathmandu, as Nepal's tourism hub,
                 is home to a diverse range of hotels catering to global travelers.
               </p>
@@ -97,7 +67,7 @@ export default function AboutPage() {
               </p>
               <div>
                 <p className="font-semibold text-foreground">Mr.Saroj Ale</p>
-                <p className="text-muted-foreground">President,  Unity Hotel and Guesthouse Business Association of Nepal</p>
+                <p className="text-muted-foreground">President,  United Hotel and Guest House Professionals Association, Nepal</p>
               </div>
             </div>
           </div>
@@ -109,7 +79,7 @@ export default function AboutPage() {
               <div>
                 <h2 className="text-2xl font-bold text-foreground mb-4">Our Mission</h2>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Unity Hotel and guesthouse Business Association of Nepalis dedicated to fostering excellence in the hospitality
+                  United Hotel and Guest House Professionals Association, Nepal is dedicated to fostering excellence in the hospitality
                   industry. We unite hotel owners and managers to promote professional standards, sustainable practices,
                   and collaborative growth.
                 </p>
@@ -152,33 +122,190 @@ export default function AboutPage() {
           </div>
         </section>
 
-       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-background">
+       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background to-secondary/5">
   <div className="max-w-7xl mx-auto">
+    {/* Working Committee Section */}
     <div className="text-center mb-12">
-      <h2 className="text-3xl font-bold text-foreground mb-2">Central Community Leadership</h2>
-      <p className="text-muted-foreground">Meet the dedicated leaders driving forward</p>
+      <div className="inline-block mb-4">
+        <span className="text-primary font-semibold text-sm tracking-widest uppercase">Our Team</span>
+      </div>
+      <h2 className="text-3xl font-bold text-foreground mb-2">Working Committee</h2>
+      <p className="text-muted-foreground max-w-2xl mx-auto">Meet the dedicated Working Committee members who are constantly working for the betterment of the industry</p>
     </div>
 
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-      {leadership.map((member, index) => (
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-16">
+      {workingCommittee.map((member, index) => {
+        const isPresident = member.position === "President"
+        return (
+          <div
+            key={index}
+            className={`group relative rounded-xl overflow-hidden transition-all duration-300 hover:shadow-xl ${
+              isPresident 
+                ? "bg-white dark:bg-slate-900 border border-amber-300/60 hover:border-amber-400/80" 
+                : "bg-white dark:bg-slate-900 border border-border/50 hover:border-primary/50"
+            }`}
+          >
+            <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
+              isPresident 
+                ? "bg-gradient-to-br from-amber-400/5 to-yellow-400/5" 
+                : "bg-gradient-to-br from-primary/5 to-transparent"
+            }`}></div>
+            
+            <div className="p-6 relative z-10">
+              <div className="flex flex-col items-center text-center mb-4">
+                {/* Member Photo */}
+                <div className="relative w-32 h-32 mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <div className={`absolute inset-0 rounded-full p-1 ${
+                    isPresident 
+                      ? "bg-gradient-to-br from-amber-400/80 via-yellow-500/80 to-amber-500/80" 
+                      : "bg-gradient-to-br from-primary to-accent"
+                  }`}>
+                    <div className="w-full h-full rounded-full overflow-hidden bg-white dark:bg-slate-900">
+                      <Image
+                        src={member.photo || "/placeholder-user.jpg"}
+                        alt={member.name}
+                        width={128}
+                        height={128}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </div>
+                </div>
+                
+                <p className={`text-xs font-semibold uppercase tracking-wider mb-2 ${
+                  isPresident ? "text-amber-600/80 dark:text-amber-400/80" : "text-primary"
+                }`} dangerouslySetInnerHTML={{ __html: member.position }}></p>
+                <h4 className="text-base font-bold text-foreground group-hover:text-primary transition-colors duration-300">
+                  {member.name}
+                </h4>
+              </div>
+
+              {member.phone && (
+                <div className={`flex items-center justify-center gap-2 pt-4 border-t ${
+                  isPresident ? "border-amber-200/50" : "border-border/30"
+                }`}>
+                  <Phone className={`w-4 h-4 shrink-0 ${isPresident ? "text-amber-500/70" : "text-primary/70"}`} />
+                  <a
+                    href={`tel:+977${member.phone}`}
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300 group-hover:font-medium"
+                  >
+                    +977 {member.phone}
+                  </a>
+                </div>
+              )}
+            </div>
+          </div>
+        )
+      })}
+    </div>
+
+    {/* Advisors Section */}
+    <div className="text-center mb-12">
+      <div className="inline-block mb-4">
+        <span className="text-primary font-semibold text-sm tracking-widest uppercase">Guidance</span>
+      </div>
+      <h2 className="text-3xl font-bold text-foreground mb-2">Advisors</h2>
+      <p className="text-muted-foreground max-w-2xl mx-auto">Our esteemed advisors providing guidance and expertise</p>
+    </div>
+
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-16">
+      {advisors.map((member, index) => (
         <div
           key={index}
-          className="bg-card border border-border rounded-lg p-6 hover:shadow-md transition flex flex-col items-center gap-4"
+          className="group relative bg-white dark:bg-slate-900 rounded-xl overflow-hidden border border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-xl"
         >
-          {/* Member Photo */}
-          <img
-            src={member.photo} // Ensure member object has photo URL
-            alt={member.name}
-            className="w-24 h-24 rounded-full object-cover"
-          />
-          {/* Member Info */}
-          <div className="text-center">
-            <h3 className="font-bold text-foreground mb-1">{member.name}</h3>
-            <p className="text-primary font-semibold text-sm mb-2">{member.position}</p>
-            <div className="flex justify-center items-center gap-2 text-muted-foreground text-sm">
-              <Phone size={16} />
-              <a href="tel:{member.phone}">{member.phone}</a> 
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          
+          <div className="p-6 relative z-10">
+            <div className="flex flex-col items-center text-center mb-4">
+              {/* Member Photo */}
+              <div className="relative w-32 h-32 mb-4 group-hover:scale-110 transition-transform duration-300">
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary to-accent p-1">
+                  <div className="w-full h-full rounded-full overflow-hidden bg-white dark:bg-slate-900">
+                    <Image
+                      src={member.photo || "/placeholder-user.jpg"}
+                      alt={member.name}
+                      width={128}
+                      height={128}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
+              
+              <p className="text-xs font-semibold text-primary uppercase tracking-wider mb-2" dangerouslySetInnerHTML={{ __html: member.position }}></p>
+              <h4 className="text-base font-bold text-foreground group-hover:text-primary transition-colors duration-300">
+                {member.name}
+              </h4>
             </div>
+
+            {member.phone && (
+              <div className="flex items-center justify-center gap-2 pt-4 border-t border-border/30">
+                <Phone className="w-4 h-4 text-primary/70 shrink-0" />
+                <a
+                  href={`tel:+977${member.phone}`}
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300 group-hover:font-medium"
+                >
+                  +977 {member.phone}
+                </a>
+              </div>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    {/* Employees Section */}
+    <div className="text-center mb-12">
+      <div className="inline-block mb-4">
+        <span className="text-primary font-semibold text-sm tracking-widest uppercase">Support</span>
+      </div>
+      <h2 className="text-3xl font-bold text-foreground mb-2">Employees</h2>
+      <p className="text-muted-foreground max-w-2xl mx-auto">Our dedicated employees supporting the association's operations</p>
+    </div>
+
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      {employees.map((member, index) => (
+        <div
+          key={index}
+          className="group relative bg-white dark:bg-slate-900 rounded-xl overflow-hidden border border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-xl"
+        >
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          
+          <div className="p-6 relative z-10">
+            <div className="flex flex-col items-center text-center mb-4">
+              {/* Member Photo */}
+              <div className="relative w-32 h-32 mb-4 group-hover:scale-110 transition-transform duration-300">
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary to-accent p-1">
+                  <div className="w-full h-full rounded-full overflow-hidden bg-white dark:bg-slate-900">
+                    <Image
+                      src={member.photo || "/placeholder-user.jpg"}
+                      alt={member.name}
+                      width={128}
+                      height={128}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
+              
+              <p className="text-xs font-semibold text-primary uppercase tracking-wider mb-2" dangerouslySetInnerHTML={{ __html: member.position }}></p>
+              <h4 className="text-base font-bold text-foreground group-hover:text-primary transition-colors duration-300">
+                {member.name}
+              </h4>
+            </div>
+
+            {member.phone && (
+              <div className="flex items-center justify-center gap-2 pt-4 border-t border-border/30">
+                <Phone className="w-4 h-4 text-primary/70 shrink-0" />
+                <a
+                  href={`tel:+977${member.phone}`}
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300 group-hover:font-medium"
+                >
+                  +977 {member.phone}
+                </a>
+              </div>
+            )}
           </div>
         </div>
       ))}
@@ -186,40 +313,7 @@ export default function AboutPage() {
   </div>
 </section>
 
-<section className="py-16 px-4 sm:px-6 lg:px-8">
-  <div className="max-w-7xl mx-auto">
-    <div className="text-center mb-12">
-      <h2 className="text-3xl font-bold text-foreground mb-2">General Members</h2>
-      <p className="text-muted-foreground">Valued contributors to our association</p>
-    </div>
-
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-      {members.map((member, index) => (
-        <div
-          key={index}
-          className="bg-gradient-to-r from-primary/5 to-accent/5 border border-border rounded-lg p-6 flex flex-col items-center gap-3"
-        >
-          {/* Member Photo */}
-          <img
-            src={member.photo} // Ensure member object has photo URL
-            alt={member.name}
-            className="w-20 h-20 rounded-full object-cover"
-          />
-          {/* Member Info */}
-          <div className="text-center">
-            <p className="font-semibold text-foreground mb-1">{member.name}</p>
-             <p className="text-primary font-semibold text-sm mb-2">{member.position}</p>
-            <div className="flex justify-center items-center gap-2 text-muted-foreground text-sm">
-              <Phone size={14} />
-              <a href="tel:{member.phone}">{member.phone}</a>
-            </div>
-          </div>
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
-      </main>
+</main>
       <Footer />
     </div>
   )

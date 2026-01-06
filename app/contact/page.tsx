@@ -30,15 +30,27 @@ export default function ContactPage() {
     <div className="min-h-screen bg-gray-50">
       <Header />
       
-      {/* Header Section */}
-      <div className="bg-white border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="text-center">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">Contact Ekata Hotels</h1>
-            <p className="text-lg text-gray-600">Get in touch with us for any inquiries or support</p>
-          </div>
-        </div>
-      </div>
+     <div className="bg-white border-b">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div className="text-center">
+
+      <h1 className="flex items-center justify-center gap-3 text-4xl font-bold text-gray-900 mb-4">
+        <img
+          src="/ektalogo.png"
+          alt="United Logo"
+          className="h-20 w-auto"
+        />
+        United Hotel and Guesthouse Professionals Association
+            
+      </h1>
+       
+
+     
+    </div>
+  </div>
+</div>
+
+
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -170,11 +182,8 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <p className="font-semibold mb-1 text-lg">Phone</p>
-                  <a href="tel:+977014981882" className="opacity-90 hover:opacity-100 transition block">
-                    +977 01-4981882
-                  </a>
-                  <a href="tel:+9779851195211" className="opacity-90 hover:opacity-100 transition block">
-                    +977 9851195211
+                  <a href="tel:+97714586327" className="opacity-90 hover:opacity-100 transition block">
+                    +977 01-4586327
                   </a>
                 </div>
               </div>
@@ -186,10 +195,10 @@ export default function ContactPage() {
                 <div>
                   <p className="font-semibold mb-1 text-lg">Email</p>
                   <a 
-                    href="mailto:Ktmhotelbusinessassociation@gmail.com" 
+                    href="mailto:ekatahotel2069@gmail.com" 
                     className="opacity-90 hover:opacity-100 transition break-words"
                   >
-                    Ktmhotelbusinessassociation@gmail.com
+                    ekatahotel2069@gmail.com
                   </a>
                 </div>
               </div>
@@ -233,7 +242,7 @@ export default function ContactPage() {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Unity Hotel and Guesthouse Business Association Location Map"
+              title="United Hotel and Guest House Professionals Association Location Map"
             />
           </div>
 
@@ -241,7 +250,7 @@ export default function ContactPage() {
             <div className="flex items-start gap-3">
               <MapPin className="text-[#2d5016] shrink-0 mt-1" size={20} />
               <div>
-                <p className="font-semibold text-gray-900">Unity Hotel and Guesthouse Business Association Location</p>
+                <p className="font-semibold text-gray-900">United Hotel and Guest House Professionals Association Location</p>
                 <p className="text-gray-600 text-sm mt-1">P92M+YC3, Kathmandu 44600, Nepal</p>
               </div>
             </div>

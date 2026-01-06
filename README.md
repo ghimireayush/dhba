@@ -23,7 +23,7 @@ A modern, full-featured website for the District Hotel Business Association Kath
 
 ## 🏨 About
 
-The District Hotel Business Association Kathmandu (DHBA) website serves as the digital hub for the hospitality sector in Kathmandu. Established in 2074 B.S., DHBA represents seven active hotel business associations operating in key areas including Kalanki, Sundhara, Bagbazar, Koteshwor, Airport, Chabahil, New Bus Park, and Balaju.
+The District Hotel Business Association Kathmandu (DHBA) website serves as the digital hub for the hospitality sector in Kathmandu. Established in 2074 B.S., DHBA represents 250+ active hotel business associations operating in key areas including Kalanki, Sundhara, Bagbazar, Koteshwor, Airport, Chabahil, New Bus Park, and Balaju.
 
 ### Mission
 To promote, protect, and advance the interests of the hotel and hospitality industry in Kathmandu through collaboration, advocacy, and professional development.

@@ -128,7 +128,7 @@ export function HeroSection() {
   // ❌ DATA: 3 hardcoded slides
   const slides = [
     { title: "District Hotel Business Association...", ... },
-    { title: "Seven Active Hotel Associations", ... },
+    { title: "250+ Active Hotel Associations", ... },
     // ... more data
   ]
 

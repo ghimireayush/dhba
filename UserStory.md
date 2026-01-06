@@ -14,7 +14,7 @@
 |----|------------|---------------------|--------|
 | HP-01 | As a visitor, I want to see DHBA branding immediately, so I understand what organization this is. | Hero section with carousel, meteors effect, and Nepal map | ✅ Implemented |
 | HP-02 | As a visitor, I want to see member statistics, so I can gauge DHBA's credibility. | Animated counter showing members, hotels, events, years | ✅ Implemented |
-| HP-03 | As a visitor, I want to see member locations on a map, so I understand geographic coverage. | Interactive Nepal map with 7 member locations | ✅ Implemented |
+| HP-03 | As a visitor, I want to see member locations on a map, so I understand geographic coverage. | Interactive Nepal map with 250+ member locations | ✅ Implemented |
 | HP-04 | As a visitor, I want quick access to contact info, so I can reach DHBA easily. | Contact section with phone, email, address | ✅ Implemented |
 | HP-05 | As a visitor, I want to subscribe to updates, so I stay informed. | Newsletter form with email input | ✅ Implemented |
 | HP-06 | As a visitor, I want to see leadership team, so I know who runs DHBA. | Central Committee section with top 5 leaders | ✅ Implemented |
@@ -29,7 +29,7 @@
 |----|------------|---------------------|--------|
 | AB-01 | As a potential member, I want to read DHBA's mission, so I can decide if values align. | Mission and vision statements displayed | ✅ Implemented |
 | AB-02 | As a journalist, I want leadership contact details, so I can reach them. | 16 leaders with names, positions, phone numbers | ✅ Implemented |
-| AB-03 | As a visitor, I want to see member associations, so I understand the network. | List of 7 hotel business associations | ✅ Implemented |
+| AB-03 | As a visitor, I want to see member hotels, so I understand the network. | List of 250+ hotel business associations | ✅ Implemented |
 | AB-04 | As a hotel owner, I want a clear join path, so I can become a member. | "Join DHBA" button linking to signup | ✅ Implemented |
 
 ---

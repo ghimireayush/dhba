@@ -48,8 +48,8 @@ Complete redesign and enhancement of the Hero Section and Newsletter Section to 
 
 #### C. Hero Content (Bottom Section)
 **Updated Content:**
-- **Slide 1:** Full DHBA context - "The District Hotel Business Association Kathmandu (DHBA) is a dedicated organization representing the hospitality sector in Kathmandu. Established in 2074 B.S., DHBA serves as the umbrella organization for seven active hotel business associations."
-- **Slide 2:** Information about seven member units in Kalanki, Sundhara, Bagbazar, Koteshwor, Airport, Chabahil, New Bus Park, and Balaju
+- **Slide 1:** Full DHBA context - "The District Hotel Business Association Kathmandu (DHBA) is a dedicated organization representing the hospitality sector in Kathmandu. Established in 2074 B.S., DHBA serves as the umbrella organization for 250+ active hotel business associations."
+- **Slide 2:** Information about 250+ member units in Kalanki, Sundhara, Bagbazar, Koteshwor, Airport, Chabahil, New Bus Park, and Balaju
 - **Slide 3:** Community invitation and networking opportunities
 
 **Visual Enhancements:**

@@ -26,8 +26,8 @@ export function Footer() {
                 />
               </div>
               <div className="hidden sm:block">
-                <span className="text-base font-bold text-foreground leading-tight">Unity Hotel and Guesthouse</span>
-                <p className="text-xs text-muted-foreground">Business Association of Nepal</p>
+                <span className="text-base font-bold text-foreground leading-tight">United Hotel and Guest House</span>
+                <p className="text-xs text-muted-foreground">Professionals Association, Nepal</p>
               </div>
             </div>
             <p className="text-foreground/70 text-sm leading-relaxed">{t("footer.brand")}</p>
@@ -85,23 +85,28 @@ export function Footer() {
                 <Phone size={18} className="text-accent flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="text-xs text-muted-foreground">{t("footer.phone")}</p>
-                   <a href="tel:+9779851170835" className="text-muted-foreground">+977 985-1170835 </a>
-                   <br/>
-                   <a href="tel:+014566866" className="text-muted-foreground">+977 014566866</a>
+                   <a href="tel:+97714586327" className="text-muted-foreground">+977 01-4586327</a>
                 </div>
               </li>
               <li className="flex gap-3 items-start">
                 <Mail size={18} className="text-accent flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="text-xs text-muted-foreground">{t("footer.email")}</p>  
-                  <a href="mailto:info@ekata.org.np"         className="text-foreground/90 text-sm font-medium">info@ekata.org.np</a>
+                  <a href="mailto:ekatahotel2069@gmail.com" className="text-foreground/90 text-sm font-medium">ekatahotel2069@gmail.com</a>
                 </div>
               </li>
               <li className="flex gap-3 items-start">
                 <MapPin size={18} className="text-accent flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="text-xs text-muted-foreground">{t("footer.location")}</p>
-                  <p className="text-foreground/90 text-sm font-medium">  Near Tribhuvan International Airport <br/> Pasupatinath  Kathmandu,  </p>
+                  <a 
+                    href="https://www.google.com/maps/place/Palagya+Hotel/@27.7058835,85.3508272,17z/data=!3m1!4b1!4m9!3m8!1s0x39eb1981e4290e07:0xf62e653d652cfb9d!5m2!4m1!1i2!8m2!3d27.7058835!4d85.3508272!16s%2Fg%2F1233610wp!17m2!4m1!1e3!18m1!1e1?entry=ttu"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-foreground/90 text-sm font-medium hover:text-primary transition-colors"
+                  >
+                    Near Tribhuvan International <br/> Airport, Pashupati, Kathmandu, Nepal
+                  </a>
                 </div>
               </li>
             </ul>
@@ -116,7 +121,7 @@ export function Footer() {
         {/* Divider */}
         <div className="flex flex-col items-center justify-center text-center gap-6">
   <p className="text-foreground/60 text-sm">
-    © {currentYear} Unity Hotel and Guesthouse Business Association of Nepal. {t("footer.rights")}
+    © {currentYear} United Hotel and Guest House Professionals Association, Nepal. {t("footer.rights")}
   </p>
 </div>
 

@@ -2,7 +2,7 @@
 
 import type React from "react"
 import { createContext, useContext, useState } from "react"
-import { ASSOCIATION_CONFIG } from "@/config/associations"
+
 
 export type Language = "en" | "ne"
 
@@ -74,14 +74,14 @@ const translations = {
     },
     home: {
       hero: {
-        title: "Unity Hotel and Guesthouse Business Association of Nepal",
-        subtitle: "Unity Hotel and Guesthouse Business Association of Nepal is a dedicated organization representing the hospitality sector in Kathmandu. Established in 2074 B.S., it serves as the umbrella organization for {{count}} active hotel business associations.",
+        title: "United Hotel and Guest House Professionals Association, Nepal",
+        subtitle: "Representing 250+ member hotels across Kathmandu since 2069 B.S. — Promoting excellence in Nepal's hospitality industry.",
         cta: "Explore Our Members",
         exploreBtn: "Explore Hotels",
         learnMore: "Learn More",
         badge: "Discover Premium Hospitality",
-        slide2Title: "{{count}} Active Hotel Associations",
-        slide2Subtitle: "Operating in key areas of Kathmandu, including Kalanki, Sundhara, Bagbazar, Koteshwor, Airport, Chabahil, New Bus Park, and Balaju.",
+        slide2Title: "250+ Active Member Hotels",
+        slide2Subtitle: "Operating in key areas of Kathmandu.",
         slide2Cta: "View Locations",
         slide3Title: "Join Our Community",
         slide3Subtitle: "Be part of Kathmandu's premier hospitality network. Connect with industry leaders and grow your business.",
@@ -89,7 +89,7 @@ const translations = {
       },
       ticker: {
         aboutDhba: "About Us",
-        aboutDesc: "Representing hospitality sector since 2074 B.S.",
+        aboutDesc: "Representing hospitality sector since 2069 B.S.",
         annualMeeting: "Annual General Meeting",
         meetingDesc: "Join us for networking opportunities",
         tourismGrowth: "Tourism Growth 2025",
@@ -97,7 +97,7 @@ const translations = {
         hospitalityExcellence: "Hospitality Excellence",
         excellenceDesc: "Best practices for hotel management",
         memberUnits: "Our Member Units",
-        unitsDesc: "7 associations across Kathmandu",
+        unitsDesc: "7 member hotels across Kathmandu",
         luxuryAccommodations: "Luxury Accommodations",
         accommodationsDesc: "Discover premium hotels in Kathmandu",
         fineDining: "Fine Dining Experience",
@@ -141,16 +141,17 @@ const translations = {
     },
     about: {
       title: "About Us",
-      subtitle: "Unity Hotel and Guesthouse Business Association of Nepal",
+      subtitle: "United Hotel and Guest House Professionals Association, Nepal",
       mission: "Our Mission",
       vision: "Our Vision",
       history: "Our History",
-      established: "Established in 2074 B.S.",
-      description: "Unity Hotel and Guesthouse Business Association of Nepal is a dedicated organization representing the hospitality sector in Kathmandu.",
-      fullDescription: "We serve as the umbrella organization for {{count}} active hotel business associations (units) operating in key areas of Kathmandu, including Kalanki, Sundhara, Bagbazar, Koteshwor, Airport, Chabahil, New Bus Park, and Balaju.",
-      serviceAreas: "Our service areas include Kalanki, Sundhara, Bagbazar, Koteshwor, Airport, Chabahil, New Bus Park, and Balaju. We are committed to advocating for hotel owners' rights, upholding service standards, and collaborating with tourism authorities to enhance the industry's overall development.",
-      previewTitle: "About Unity",
-      previewDescription: "Unity Hotel and Guesthouse Business Association of Nepal is a dedicated organization representing the hospitality sector in Kathmandu. Established in 2074 B.S., Unity serves as the umbrella organization for {{count}} active hotel business associations.",
+      established: "Established in 2069 B.S.",
+      description: "United Hotel and Guest House Professionals Association, Nepal is a dedicated organization representing the hospitality sector in Kathmandu.",
+      fullDescription: "We serve as the umbrella organization for 250+ active member hotels operating in key areas of Kathmandu.",
+     
+      previewTitle: "About United",
+      previewDescription: "United Hotel and Guest House Professionals Association, Nepal is a dedicated organization representing the hospitality sector in Kathmandu. Established in 2069 B.S., United serves as the umbrella organization for many active member hotels.",
+      serviceAreas: "We serve as the umbrella organization for 250+ active member hotels operating in key areas including Naya Basti Tilaganga, Airport Sinamangal, Gausala Pingalasthan, Gyaneshwor, Sukedhara, Chakrapath, Basundhara, and Lazimpat.",
       readFullStory: "Read Full Story",
       leadershipTitle: "Our Leadership",
       presidentTitle: "President, Unity Kathmandu",
@@ -230,7 +231,7 @@ const translations = {
       backToLogin: "Back to Login",
     },
     footer: {
-      brand: "Unity Hotel and Guesthouse Business Association, representing premium hospitality and excellence in Nepal's capital.",
+      brand: "United Hotel and Guest House Professionals Association, representing premium hospitality and excellence in Nepal's capital.",
       quickLinks: "Quick Links",
       resources: "Resources",
       contact: "Contact",
@@ -250,7 +251,7 @@ const translations = {
       kathmandu: "Kathmandu Hotel Business Association",
       nepalguesthouse: "Nepal Guest House Business Association",
       sundhara: "Sundhara Hotel Business Association",
-      united: "United Hotel and Guest House",
+      united: "United Hotel and Guest House Professionals Association",
       nepalihotel: "Nepali Hotel Business Association",
       relatedOrgs: "Related Organizations",
       membersCount: "members",
@@ -304,13 +305,13 @@ const translations = {
     home: {
       hero: {
         title: "एकता होटल तथा गेस्टहाउस व्यवसायी सङ्घ काठमाडौँ, नेपाल",
-        subtitle: "एकता होटल तथा गेस्टहाउस व्यवसायी सङ्घ काठमाडौँको आतिथ्य क्षेत्रको प्रतिनिधित्व गर्ने एक समर्पित संस्था हो। २०७४ बि.स. मा स्थापित, यो {{count}} सक्रिय होटेल व्यवसाय संघहरूको छाता संगठनको रूपमा काम गर्दछ।",
+        subtitle: "एकता होटल तथा गेस्टहाउस व्यवसायी सङ्घ काठमाडौँको आतिथ्य क्षेत्रको प्रतिनिधित्व गर्ने एक समर्पित संस्था हो। २०६९ बि.स. मा स्थापित, यो २५०+ सक्रिय सदस्य होटलहरूको छाता संगठनको रूपमा काम गर्दछ।",
         cta: "हाम्रा सदस्यहरू अन्वेषण गर्नुहोस्",
         exploreBtn: "होटलहरु खोज्नुहोस्",
         learnMore: "अझ जान्नुहोस्",
         badge: "प्रीमियम आतिथ्य खोज्नुहोस्",
-        slide2Title: "{{count}} सक्रिय होटेल संघहरू",
-        slide2Subtitle: "काठमाडौंका मुख्य क्षेत्रहरूमा सञ्चालन, कलंकी, सुन्धरा, बागबजार, कोटेश्वर, एयरपोर्ट, चाबहिल, नयाँ बसपार्क र बालाजु सहित।",
+        slide2Title: "२५०+ सक्रिय सदस्य होटलहरू",
+        slide2Subtitle: "काठमाडौंका मुख्य क्षेत्रहरूमा सञ्चालन।",
         slide2Cta: "स्थानहरू हेर्नुहोस्",
         slide3Title: "हाम्रो समुदायमा सामेल हुनुहोस्",
         slide3Subtitle: "काठमाडौंको प्रमुख आतिथ्य नेटवर्कको हिस्सा बन्नुहोस्। उद्योग नेताहरूसँग जडान गर्नुहोस् र आफ्नो व्यवसाय बढाउनुहोस्।",
@@ -318,7 +319,7 @@ const translations = {
       },
       ticker: {
         aboutDhba: "हाम्रो बारेमा",
-        aboutDesc: "२०७४ बि.स. देखि आतिथ्य क्षेत्रको प्रतिनिधित्व गर्दै",
+        aboutDesc: " २०६९ बि.स. देखि आतिथ्य क्षेत्रको प्रतिनिधित्व गर्दै",
         annualMeeting: "वार्षिक साधारण सभा",
         meetingDesc: "नेटवर्किङ अवसरहरूको लागि हामीसँग सामेल हुनुहोस्",
         tourismGrowth: "पर्यटन वृद्धि २०२५",
@@ -326,7 +327,7 @@ const translations = {
         hospitalityExcellence: "आतिथ्य उत्कृष्टता",
         excellenceDesc: "होटेल व्यवस्थापनका लागि उत्तम अभ्यासहरू",
         memberUnits: "हाम्रा सदस्य इकाईहरू",
-        unitsDesc: "काठमाडौं भरि ७ संघहरू",
+        unitsDesc: "काठमाडौं भरि ७ सदस्य होटलहरू",
         luxuryAccommodations: "लक्जरी आवास",
         accommodationsDesc: "काठमाडौंमा प्रिमियम होटलहरू पत्ता लगाउनुहोस्",
         fineDining: "उत्कृष्ट भोजन अनुभव",
@@ -374,12 +375,13 @@ const translations = {
       mission: "हाम्रो मिशन",
       vision: "हाम्रो दृष्टिकोण",
       history: "हाम्रो इतिहास",
-      established: "२०७४ बि.स. मा स्थापित",
+      established: "२०६९  बि.स. मा स्थापित",
       description: "एकता होटल तथा गेस्टहाउस व्यवसायी सङ्घ काठमाडौँको आतिथ्य क्षेत्रको प्रतिनिधित्व गर्ने एक समर्पित संस्था हो।",
-      fullDescription: "हामी कलंकी, सुन्धरा, बागबजार, कोटेश्वर, एयरपोर्ट, चाबहिल, नयाँ बसपार्क र बालाजु सहित काठमाडौंका मुख्य क्षेत्रहरूमा सञ्चालन हुने {{count}} सक्रिय होटेल व्यवसाय संघहरू (इकाईहरू) को छाता संगठनको रूपमा काम गर्दछौं।",
-      serviceAreas: "हाम्रो सेवा क्षेत्रहरूमा कलंकी, सुन्धरा, बागबजार, कोटेश्वर, एयरपोर्ट, चाबहिल, नयाँ बसपार्क र बालाजु समावेश छन्। हामी होटेल स्वामीहरूको अधिकारको पक्षलाई समर्थन गर्न, सेवा मानकहरू कायम गर्न, र पर्यटन प्राधिकरणहरूसँग सहकार्य गर्न उद्योगको समग्र विकासलाई बढाउन प्रतिबद्ध छौं।",
+      fullDescription: "हामी काठमाडौंका मुख्य क्षेत्रहरूमा सञ्चालन हुने २५०+ सक्रिय सदस्य होटलहरूको छाता संगठनको रूपमा काम गर्दछौं।",
+       
       previewTitle: "एकताको बारेमा",
-      previewDescription: "एकता होटल तथा गेष्टहाउस व्यवसाय संघ नेपाल काठमाडौंको आतिथ्य क्षेत्रको प्रतिनिधित्व गर्ने एक समर्पित संस्था हो। २०७४ बि.स. मा स्थापित, एकताले {{count}} सक्रिय होटेल व्यवसाय संघहरूको छाता संगठनको रूपमा काम गर्दछ।",
+      previewDescription: "एकता होटल तथा गेष्टहाउस व्यवसाय संघ नेपाल काठमाडौंको आतिथ्य क्षेत्रको प्रतिनिधित्व गर्ने एक समर्पित संस्था हो। २०६९ बि.स. मा स्थापित, एकताले २५०+ सक्रिय सदस्य होटलहरूको छाता संगठनको रूपमा काम गर्दछ।",
+      serviceAreas: "हामी काठमाडौंका मुख्य क्षेत्रहरूमा सञ्चालन हुने २५०+ सक्रिय सदस्य होटलहरूको छाता संगठनको रूपमा काम गर्दछौं।",
       readFullStory: "पूरा कथा पढ्नुहोस्",
       leadershipTitle: "हाम्रो नेतृत्व",
       presidentTitle: "अध्यक्ष, एकता काठमाडौं",
@@ -479,7 +481,7 @@ const translations = {
       kathmandu: "काठमाडौं होटेल व्यवसाय संघ",
       nepalguesthouse: "नेपाल अतिथि गृह व्यवसाय संघ",
       sundhara: "सुन्धरा होटेल व्यवसाय संघ",
-      united: "संयुक्त होटेल र अतिथि गृह",
+      united: "संयुक्त होटेल र अतिथि गृह व्यावसायी संघ",
       nepalihotel: "नेपाली होटेल व्यवसाय संघ",
       relatedOrgs: "सम्बन्धित संस्थाहरु",
       membersCount: "सदस्यहरु",
